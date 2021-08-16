@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{361A83E0-4180-4231-9E7A-5FDF0533A92E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>projetoPI</RootNamespace>
+    <AssemblyName>projetoPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.14.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.14.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.25\lib\net452\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.25\lib\net452\Ubiety.Dns.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.25\lib\net452\Zstandard.Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="classes\Database.cs" />
+    <Compile Include="classes\Lancamento.cs" />
+    <Compile Include="classes\Pedido.cs" />
+    <Compile Include="classes\Procedimentos.cs" />
+    <Compile Include="classes\Produto.cs" />
+    <Compile Include="telaCadastrarTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaCadastrarTeste.Designer.cs">
+      <DependentUpon>telaCadastrarTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConsultaCadastroUsuário.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConsultaCadastroUsuário.Designer.cs">
+      <DependentUpon>telaConsultaCadastroUsuário.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaCadastroProduto.Designer.cs">
+      <DependentUpon>telaCadastroProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConsultarCadastrarTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConsultarCadastrarTeste.Designer.cs">
+      <DependentUpon>telaConsultarCadastrarTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConsultarCadastrarUsuário.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConsultarCadastrarUsuário.Designer.cs">
+      <DependentUpon>telaConsultarCadastrarUsuário.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConsultarLaudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConsultarLaudo.Designer.cs">
+      <DependentUpon>telaConsultarLaudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConsultarTeste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConsultarTeste.Designer.cs">
+      <DependentUpon>telaConsultarTeste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaConsultarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaConsultarUsuario.Designer.cs">
+      <DependentUpon>telaConsultarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaEmitirConsultarLaudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaEmitirConsultarLaudo.Designer.cs">
+      <DependentUpon>telaEmitirConsultarLaudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaEmitirLaudo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaEmitirLaudo.Designer.cs">
+      <DependentUpon>telaEmitirLaudo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLancarTestes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLancarTestes.Designer.cs">
+      <DependentUpon>telaLancarTestes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLogin.Designer.cs">
+      <DependentUpon>telaLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaInicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaInicial.Designer.cs">
+      <DependentUpon>telaInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="telaCadastroUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaCadastroUser.Designer.cs">
+      <DependentUpon>telaCadastroUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaLoginGestor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaLoginGestor.Designer.cs">
+      <DependentUpon>telaLoginGestor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="telaPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="telaPedido.Designer.cs">
+      <DependentUpon>telaPedido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="telaCadastrarTeste.resx">
+      <DependentUpon>telaCadastrarTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConsultaCadastroUsuário.resx">
+      <DependentUpon>telaConsultaCadastroUsuário.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaCadastroProduto.resx">
+      <DependentUpon>telaCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConsultarCadastrarTeste.resx">
+      <DependentUpon>telaConsultarCadastrarTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConsultarCadastrarUsuário.resx">
+      <DependentUpon>telaConsultarCadastrarUsuário.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConsultarLaudo.resx">
+      <DependentUpon>telaConsultarLaudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConsultarTeste.resx">
+      <DependentUpon>telaConsultarTeste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaConsultarUsuario.resx">
+      <DependentUpon>telaConsultarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaEmitirConsultarLaudo.resx">
+      <DependentUpon>telaEmitirConsultarLaudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaEmitirLaudo.resx">
+      <DependentUpon>telaEmitirLaudo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLancarTestes.resx">
+      <DependentUpon>telaLancarTestes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLogin.resx">
+      <DependentUpon>telaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaInicial.resx">
+      <DependentUpon>telaInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="telaCadastroUser.resx">
+      <DependentUpon>telaCadastroUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaLoginGestor.resx">
+      <DependentUpon>telaLoginGestor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="telaPedido.resx">
+      <DependentUpon>telaPedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\projetoPI.classes.Database.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-visual-studio-2010-développez-pour-le-web-avec-c-inicio-resyst-softwares-5b6887f2572699.907904221533577202357.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2021-03-25 at 18.09.49.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoamorzinho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
